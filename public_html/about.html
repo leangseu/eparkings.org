@@ -11,7 +11,7 @@
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <<script src="js/custom.js"></script>
+        <script src="js/custom.js"></script>
     </head>
     <body>
         <header>
@@ -19,21 +19,15 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html">EPARKINGS</a>
+                        <a class="navbar-brand" href="index.html"><img src="images/icon.svg" class="icon-eparkings"></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+                            <li><a href="index.html">Home</a></li>
                             <li><a href="location.html">Location</a></li>
-                            <li><a href="about.html">About Us</a></li>
+                            <li class="active"><a href="about.html">About Us<span class="sr-only">(current)</span></a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
@@ -42,24 +36,24 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                Login via
+                                                <p>Login as</p>
                                                 <div class="social-buttons">
                                                     <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                                                     <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                                                 </div>
-                                                or
+                                                <p>or</p>
                                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                        <input type="email" class="form-control" id="username" placeholder="User Name" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                        <input type="password" class="form-control" id="password" placeholder="Password" required>
                                                         <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                        <button type="submit" class="btn btn-primary btn-block" onclick="validate()">Sign in</button>
                                                     </div>
                                                     <div class="checkbox">
                                                         <label>
@@ -69,7 +63,7 @@
                                                 </form>
                                             </div>
                                             <div class="bottom text-center">
-                                                New here ? <a href="register.html"><b>Register</b></a>
+                                                <p>New here ? <a href="register.html"><b>Register</b></a></p>
                                             </div>
                                         </div>
                                     </li>
@@ -80,10 +74,13 @@
                 </div><!-- /.container-fluid -->
             </nav>
         </header>
-        <h1> The picture of the team. </h1>
-        <p> Our contact info with link to each email</p>
+        <main>
+            <div class="jumbotron">
+                <div class="container about-us">
+
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </main>
     </body>
-    <footer>
-        
-    </footer>
 </html>

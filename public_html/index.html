@@ -11,7 +11,7 @@
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <<script src="js/custom.js"></script>
+        <script src="js/custom.js"></script>
     </head>
     <body>
         <header>
@@ -19,13 +19,7 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html">EPARKINGS</a>
+                        <a class="navbar-brand" href="index.html"><img src="images/icon.svg" class="icon-eparkings"></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,29 +31,23 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login-display"><b>Login</b> <span class="caret"></span></a>
                                 <ul id="login-dp" class="dropdown-menu">
                                     <li>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                Login via
-                                                <div class="social-buttons">
-                                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                                    <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                                </div>
-                                                or
-                                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                <form class="form" role="form" method="post" accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                        <label class="sr-only" for="username">User Name</label>
+                                                        <input type="text" class="form-control" id="username" placeholder="User Name" name="username" required>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                        <label class="sr-only" for="password">Password</label>
+                                                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                                                         <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                        <button type="submit" class="btn btn-primary btn-block" onclick="validate()">login</button>
                                                     </div>
                                                     <div class="checkbox">
                                                         <label>
@@ -69,7 +57,7 @@
                                                 </form>
                                             </div>
                                             <div class="bottom text-center">
-                                                New here ? <a href="register.html"><b>Register</b></a>
+                                                <p>New here ? <a href="register.html"><b>Register</b></a></p>
                                             </div>
                                         </div>
                                     </li>
@@ -90,7 +78,7 @@
                 </ol>
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner carousel-img" role="listbox">
                     <div class="item active">
                         <img src="images/image-1.jpg" alt="Parking picture">
                         <div class="carousel-caption">
@@ -124,6 +112,63 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+            <br>
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row">
+                <div class="col-xs-7 col-xs-offset-1 home-detail">
+                    <h1> Our Mission Statement </h1>
+                    <p>
+                        Our acknowledgement of the difficulties regarding finding affordable parking
+                        spaces in large cities brought our efforts towards the creation of this
+                        application. We believe that giving our communities the opportunity to help
+                        each other with the incentive of a small monetary gains would only ease the
+                        lives of those who wish or need to travel to large cities. EParking will
+                        allow it's users to rent or lease private parking spaces to the public for a
+                        fee equal to or smaller than those offered through public means. The money
+                        gained from this application will distributed three ways: the owner, the
+                        developers, and the government as we do not wish to take away from the
+                        city's profits on parking meters. Our mission is to make the lives of
+                        commuters and travelers easier and more affordable while also engaging our
+                        community. 
+                    </p>
+                </div>
+                <div class="col-xs-4">
+                    <div class="home-detail">
+                        <p>
+                        Our acknowledgement of the difficulties regarding finding affordable parking
+                        spaces in large cities brought our efforts towards the creation of this
+                        application. We believe that giving our communities the opportunity to help
+                        each other with the incentive of a small monetary gains would only ease the
+                        lives of those who wish or need to travel to large cities. EParking will
+                        allow it's users to rent or lease private parking spaces to the public for a
+                        fee equal to or smaller than those offered through public means. The money
+                        gained from this application will distributed three ways: the owner, the
+                        developers, and the government as we do not wish to take away from the
+                        city's profits on parking meters. Our mission is to make the lives of
+                        commuters and travelers easier and more affordable while also engaging our
+                        community. 
+                    </p>
+                    </div>
+                    <br>
+                    <div class="home-detail">
+                        <p>
+                        Our acknowledgement of the difficulties regarding finding affordable parking
+                        spaces in large cities brought our efforts towards the creation of this
+                        application. We believe that giving our communities the opportunity to help
+                        each other with the incentive of a small monetary gains would only ease the
+                        lives of those who wish or need to travel to large cities. EParking will
+                        allow it's users to rent or lease private parking spaces to the public for a
+                        fee equal to or smaller than those offered through public means. The money
+                        gained from this application will distributed three ways: the owner, the
+                        developers, and the government as we do not wish to take away from the
+                        city's profits on parking meters. Our mission is to make the lives of
+                        commuters and travelers easier and more affordable while also engaging our
+                        community. 
+                    </p>
+                    </div>
+                </div>
+            </div>
+            
         </main>
         <footer>
 

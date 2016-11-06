@@ -45,8 +45,50 @@
     align-content: center;
 }
 
-.register-pad input {
-    
+.icon-eparkings {
+    height: 36px;
+    width: auto;
+}
+
+.carousel-img img{
+    height: 64px;
+    width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: 80%;
+  align: center;
+}
+
+.about-us {
+    padding: 1%;
+    margin: 1%;
+}
+
+.home-detail {
+    color: #fff;
+    padding: 10px;
+    background-color: #3333ff;
+    border-style: double;
+    border-color: #fff;
+    border-radius: 25px;
+}
+
+.row {
+    width: 90%;
+}
+
+iframe {
+    display: relative;
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+
+#map {
+    width: 50%;
+    height: 400px;
 }
 
 @media(max-width:768px){
@@ -59,3 +101,4 @@
         border-top:0 none;
     }
 }
+

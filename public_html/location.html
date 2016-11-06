@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Location</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eparkings</title>
+
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <style>
-            /* Always set the map height explicitly to define the size of the div
-             * element that contains the map. */
-            #map {
-                height: 80%;
-            }
-            /* Optional: Makes the sample page fill the window. */
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-        </style>
+        <script src="js/custom.js"></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8sgpUVqo9DwzhKJWAEZcI96iwPCTvFb0&callback=initMap">
+        </script>
     </head>
     <body>
         <header>
@@ -29,20 +24,14 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html">EPARKINGS</a>
+                        <a class="navbar-brand" href="index.html"><img src="images/icon.svg" class="icon-eparkings"></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
-                            <li><a href="location.html">Location</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active"><a href="location.html">Location<span class="sr-only">(current)</span></a></li>
                             <li><a href="about.html">About Us</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -52,20 +41,20 @@
                                     <li>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                Login via
+                                                <p>Login as</p>
                                                 <div class="social-buttons">
                                                     <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                                                     <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                                                 </div>
-                                                or
+                                                <p>or</p>
                                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                        <input type="email" class="form-control" id="username" placeholder="User Name" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                        <input type="password" class="form-control" id="password" placeholder="Password" required>
                                                         <div class="help-block text-right"><a href="">Forget the password ?</a></div>
                                                     </div>
                                                     <div class="form-group">
@@ -79,7 +68,7 @@
                                                 </form>
                                             </div>
                                             <div class="bottom text-center">
-                                                New here ? <a href="register.html"><b>Register</b></a>
+                                                <p>New here ? <a href="register.html"><b>Register</b></a></p>
                                             </div>
                                         </div>
                                     </li>
@@ -90,39 +79,14 @@
                 </div><!-- /.container-fluid -->
             </nav>
         </header>
-        <div id="map"></div>
-        <script>
-            var map;
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 2,
-                    center: new google.maps.LatLng(2.8, -187.3),
-                    mapTypeId: 'terrain'
-                });
-
-                // Create a <script> tag and set the USGS URL as the source.
-                var script = document.createElement('script');
-                // This example uses a local copy of the GeoJSON stored at
-                // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-                script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-                document.getElementsByTagName('head')[0].appendChild(script);
-            }
-
-            // Loop through the results array and place a marker for each
-            // set of coordinates.
-            window.eqfeed_callback = function (results) {
-                for (var i = 0; i < results.features.length; i++) {
-                    var coords = results.features[i].geometry.coordinates;
-                    var latLng = new google.maps.LatLng(coords[1], coords[0]);
-                    var marker = new google.maps.Marker({
-                        position: latLng,
-                        map: map
-                    });
-                }
-            }
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjGweGIBpbEGaynG0MyOJhFzSZCt1UqU&callback=initMap">
-        </script>
+        <main>
+            <br><br><br>
+            <div class="location">
+                <!--                <iframe 
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB8sgpUVqo9DwzhKJWAEZcI96iwPCTvFb0&q=Biotechnology+Department,Vestal+NY" allowfullscreen>
+                                </iframe>-->
+                <div id="map"></div>
+            </div>
+        </main>
     </body>
 </html>
