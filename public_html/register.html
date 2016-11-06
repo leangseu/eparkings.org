@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Location</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Eparkings</title>
+
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <style>
-            /* Always set the map height explicitly to define the size of the div
-             * element that contains the map. */
-            #map {
-                height: 80%;
-            }
-            /* Optional: Makes the sample page fill the window. */
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-        </style>
+        <<script src="js/custom.js"></script>
     </head>
     <body>
         <header>
@@ -90,39 +80,67 @@
                 </div><!-- /.container-fluid -->
             </nav>
         </header>
-        <div id="map"></div>
-        <script>
-            var map;
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 2,
-                    center: new google.maps.LatLng(2.8, -187.3),
-                    mapTypeId: 'terrain'
-                });
+        <main>
+            <div class="container-fluid register-pad">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 well well-sm">
+                        <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
+                        <form action="#" method="post" class="form" role="form">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <input class="form-control" name="firstname" placeholder="First Name" type="text"
+                                           required autofocus />
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <input class="form-control" name="lastname" placeholder="Last Name" type="text" required />
+                                </div>
+                                
+                            </div>
+                            <br/>
+                            <input class="form-control" name="youremail" placeholder="Your Email" type="email" />
+                            <br/>
+                            <input class="form-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
+                            <br/>
+                            <input class="form-control" name="password" placeholder="New Password" type="password" />
+                            <br/>
+                            <label for="">
+                                Birth Date</label>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-4">
+                                    <select class="form-control">
+                                        <option value="Month">Month</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4 col-md-4">
+                                    <select class="form-control">
+                                        <option value="Day">Day</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-4 col-md-4">
+                                    <select class="form-control">
+                                        <option value="Year">Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label class="radio-inline">
+                                <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
+                                Female
+                            </label>
+                            <br />
+                            <br />
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Sign up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
 
-                // Create a <script> tag and set the USGS URL as the source.
-                var script = document.createElement('script');
-                // This example uses a local copy of the GeoJSON stored at
-                // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-                script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-                document.getElementsByTagName('head')[0].appendChild(script);
-            }
-
-            // Loop through the results array and place a marker for each
-            // set of coordinates.
-            window.eqfeed_callback = function (results) {
-                for (var i = 0; i < results.features.length; i++) {
-                    var coords = results.features[i].geometry.coordinates;
-                    var latLng = new google.maps.LatLng(coords[1], coords[0]);
-                    var marker = new google.maps.Marker({
-                        position: latLng,
-                        map: map
-                    });
-                }
-            }
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsjGweGIBpbEGaynG0MyOJhFzSZCt1UqU&callback=initMap">
-        </script>
+        </footer>
     </body>
 </html>
